@@ -1,2 +1,2 @@
-# InBox
-InBox is a self-message application developed using IONIC-4 for the component development concept 
+# Memory Box
+Memory Box is a self-messaging application developed using IONIC-4 for the component development concept 
