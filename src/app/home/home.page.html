@@ -1,19 +1,28 @@
+<!-- Header -->
 <ion-header>
   <ion-toolbar>
     <ion-title align="center">Memory Box</ion-title>
   </ion-toolbar>
 </ion-header>
+<!-- Header Ends -->
 
+<!-- Content -->
 <ion-content [fullscreen]="true">
+
+  <!-- List of Memory Items -->
   <ion-list>
-  <app-memory-item></app-memory-item>
-  <app-memory-item></app-memory-item>
-  <app-memory-item></app-memory-item>
-  <app-memory-item></app-memory-item>
-</ion-list>
-<ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button>
-    <ion-icon name="add"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
+    <app-memory-item></app-memory-item>
+    <app-memory-item></app-memory-item>
+    <app-memory-item></app-memory-item>
+    <app-memory-item></app-memory-item>
+  </ion-list>
+
+  <!-- Floating Action Button Icon -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>
+<!-- Content Ends -->

@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { AddPageRoutingModule } from './add-routing.module';
 
 import { AddPage } from './add.page';
+import { ContentComponent } from '../components/content/content.component';
+import { FooterButtonsComponent } from '../components/footer-buttons/footer-buttons.component';
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { AddPage } from './add.page';
     IonicModule,
     AddPageRoutingModule
   ],
-  declarations: [AddPage]
+  declarations: [AddPage, ContentComponent, FooterButtonsComponent]
 })
 export class AddPageModule {}
