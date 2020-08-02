@@ -6,9 +6,9 @@
   </ion-avatar>
   <!-- Label with Topic and Subject -->
   <ion-label>
-    <h2>Finn</h2>
-    <h3>I'm a big deal</h3>
+    <h2>{{entry.title}}</h2>
+    <h3>{{entry.content}}</h3>
   </ion-label>
   <!-- Delete Icon -->
-  <ion-icon slot="end" name="trash-outline"></ion-icon>
+  <ion-icon (click)="removeMemory()" slot="end" name="trash-outline"></ion-icon>
 </ion-item>

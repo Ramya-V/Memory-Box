@@ -11,15 +11,15 @@
 
   <!-- List of Memory Items -->
   <ion-list>
-    <app-memory-item></app-memory-item>
-    <app-memory-item></app-memory-item>
-    <app-memory-item></app-memory-item>
-    <app-memory-item></app-memory-item>
+    <app-memory-item 
+    *ngFor="let entry of memoryBox"
+    [entry]="entry"
+    (remove)="removeMemory($event)"></app-memory-item>
   </ion-list>
 
   <!-- Floating Action Button Icon -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" >
-    <ion-fab-button (click)="addup()">
+    <ion-fab-button (click)="presentAlertPrompt()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
