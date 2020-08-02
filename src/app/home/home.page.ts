@@ -74,10 +74,10 @@ export class HomePage {
             //adds Memory
             else{
              //last entry in the array
-              var lastEntry = this.memoryBox[(this.memoryBox.length)-1]["id"];
+              var lastEntryId = this.memoryBox[(this.memoryBox.length)-1]["id"];
 
               // adds a entry 
-              this.memoryBox.push({ id: lastEntry + 1, title: data.title, content: data.content });
+              this.memoryBox.push({ id: lastEntryId + 1, title: data.title, content: data.content });
 
               }
             //console.log('Confirm Ok');
