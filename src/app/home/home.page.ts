@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { memory } from '../schema/memory';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { AlertController } from '@ionic/angular';
 export class HomePage {
   
   //Memory Entry
-  memoryBox: Object[] = [
+  memoryBox: Array<memory> = [
     {id: 1, 
      title: "LIFE",
      content:"Life is a Mystery",
@@ -21,7 +22,7 @@ export class HomePage {
   ) {}
 
   // Removes the Memory
-  removeMemory(entry: Object) {
+  removeMemory(entry: memory) {
     this.memoryBox = this.memoryBox.filter((element) => {
       return element["id"] !== entry["id"];
     });

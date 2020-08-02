@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { memory } from '../../schema/memory';
 
 @Component({
   selector: 'app-memory-item',
@@ -6,8 +7,8 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./memory-item.component.scss'],
 })
 export class MemoryItemComponent implements OnInit {
-@Input() entry: Object;
-@Output() public remove = new EventEmitter<Object>();
+@Input() entry: memory;
+@Output() public remove = new EventEmitter<memory>();
   constructor() { }
 
   ngOnInit() {}
