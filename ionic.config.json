@@ -1,5 +1,7 @@
 {
   "name": "MemoryBox",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

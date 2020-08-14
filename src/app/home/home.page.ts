@@ -1,32 +1,28 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { memory } from '../schema/memory';
+// importing service
+import { memoryboxService } from '../services/memorybox.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
-  
-  //Memory Entry
-  memoryBox: Array<memory> = [
-    {id: 1, 
-     title: "LIFE",
-     content:"Life is a Mystery",
-    },
-  ];
+export class HomePage { 
 
   constructor(
-    public alertController: AlertController
-  ) {}
+    public alertController: AlertController,
+    // create an instance of the service
+    public memoryboxService: memoryboxService
+  ) { }
 
-  // Removes the Memory
-  removeMemory(entry: memory) {
-    this.memoryBox = this.memoryBox.filter((element) => {
-      return element["id"] !== entry["id"];
-    });
-  }
+  //Gets Memory
+  memoryBox = this.memoryboxService.memoryBox();
+
+  //Removes the Memory
+  removeMemory(entry) {
+    this.memoryBox = this.memoryboxService.remove(entry);
+    }
  
   //Memory Addup Alert
   async presentAlertPrompt() {
@@ -74,14 +70,8 @@ export class HomePage {
 
             //adds Memory
             else{
-             //last entry in the array
-              var lastEntryId = this.memoryBox[(this.memoryBox.length)-1]["id"];
-
-              // adds a entry 
-              this.memoryBox.push({ id: lastEntryId + 1, title: data.title, content: data.content });
-
+                this.memoryboxService.addMemory(data);
               }
-            //console.log('Confirm Ok');
           }
         }
       ]
